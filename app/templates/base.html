@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    </head>
+
+<body>
+  <div class = "nav-container">
+      <table>
+          <td><a href="{{ url_for('index') }}" class="button">Home</a></td>
+          {% if current_user.is_anonymous %}
+          <td><a href="{{ url_for('register') }}" class="button">Register</a></td>
+          <td><a href='{{ url_for('login')}}'</td>
+          {% else %}
+              
+          {% endif %}
+        </table>
+      {% block content %} {% endblock %}
+  </div>
+</body>
+
+</html>
